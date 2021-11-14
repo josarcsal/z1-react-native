@@ -4,17 +4,17 @@ import { Text, View, TouchableOpacity, StyleSheet, Dimensions, Image } from 'rea
 
 import { Lesson } from '../interfaces/LessonInterface';
 
-const windowWidth = Dimensions.get('window').width
 
 interface Props {
-    lesson: Lesson;
+    title: string;
 }
 
-export const LessonCard = ({ lesson }: Props ) => {
+const windowWidth = Dimensions.get('window').width
+
+export const CategoryCard = ({title} : Props ) => {
 
     const [bgColor, setBgColor] = useState('grey');
     // const navigation = useNavigation();
-    const urlImagen = lesson.image; 
 
     return (
         <TouchableOpacity
@@ -28,24 +28,13 @@ export const LessonCard = ({ lesson }: Props ) => {
         >
             <View style={{
                 ...styles.cardContainer,
-                width: windowWidth * 0.4,
+                width: windowWidth * 0.1,
                 backgroundColor: bgColor
             }}>
                 <View>
-                <Image
-                    style={{
-                        height: 150,
-                        width: 150
-                    }}
-                    source={{
-                    uri: urlImagen,
-                    }}
-                />
 
                     <Text style={ styles.name }>
-                        { '\n#' + lesson.category.title }
-                        { '\n#' + lesson.title }
-                        { '\n#' + lesson.author }
+                        { title }
                     </Text>
                 </View>
 

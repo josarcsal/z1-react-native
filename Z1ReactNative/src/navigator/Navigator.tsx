@@ -3,11 +3,12 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen } from '../screens/HomeScreen';
 import { Lesson } from '../interfaces/LessonInterface';
+import { LessonScreen } from '../screens/LessonScreen';
 
 
 export type RootStackParams = {
   HomeScreen: undefined,
- // LessonScreen: { lesson: Lesson, color: string }
+  LessonScreen: { lesson: Lesson, color: string }
 }
 
 
@@ -24,7 +25,7 @@ export const Navigator = () => {
       }}
     >
       <Stack.Screen name="HomeScreen" component={ HomeScreen } />
-      {/* <Stack.Screen name="LessonScreen" component={ LessonScreen } /> */}
+      <Stack.Screen name="LessonScreen" component={ LessonScreen } />
     </Stack.Navigator>
   );
 }

@@ -4,10 +4,14 @@ import { FlatList, Text, View, } from 'react-native'
 
 import { useLesson } from '../hooks/useLesson';
 import { LessonCard } from '../components/LessonCard';
+import { CategoryCard } from '../components/CategoryCard';
+import { useCategoryList } from '../hooks/useCategory';
 
 export const HomeScreen = () => {
 
      const { lessonList } = useLesson();
+     const { categoryList } = useCategoryList();
+
      return (
          
             <View
@@ -15,11 +19,12 @@ export const HomeScreen = () => {
             >
                 <Text>Trip</Text>
                 <FlatList 
-                    data={lessonList}
-                    renderItem={ ({ item }) => ( <LessonCard lesson={ item } /> )}
+                    data={categoryList}
+                    renderItem={ ({ item }) => ( <CategoryCard title={ item } /> )}
                     horizontal= {true}
 
                 />
+
                 <FlatList 
                     data={ lessonList }
                     showsVerticalScrollIndicator={ false }
