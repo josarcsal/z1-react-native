@@ -10,48 +10,47 @@ interface Props {
     lesson: Lesson;
 }
 
-export const LessonCard = ({ lesson }: Props ) => {
+export const LessonCard = ({ lesson}: Props ) => {
 
     const [bgColor, setBgColor] = useState('grey');
     // const navigation = useNavigation();
     const urlImagen = lesson.image; 
-
-    return (
-        <TouchableOpacity
-            activeOpacity={ 0.9 } 
-            // onPress={ 
-            //     () => navigation.navigate('LessonScreen', { 
-            //         simpleLesson: lesson,
-            //         color: bgColor
-            //     }) 
-            // } 
-        >
-            <View style={{
-                ...styles.cardContainer,
-                width: windowWidth * 0.4,
-                backgroundColor: bgColor
-            }}>
-                <View>
-                <Image
-                    style={{
-                        height: 150,
-                        width: 150
-                    }}
-                    source={{
-                    uri: urlImagen,
-                    }}
-                />
-
-                    <Text style={ styles.name }>
-                        { '\n#' + lesson.category.title }
-                        { '\n#' + lesson.title }
-                        { '\n#' + lesson.author }
-                    </Text>
+        return (
+            <TouchableOpacity
+                activeOpacity={ 0.9 } 
+                // onPress={ 
+                //     () => navigation.navigate('LessonScreen', { 
+                //         simpleLesson: lesson,
+                //         color: bgColor
+                //     }) 
+                // } 
+            >
+                <View style={{
+                    ...styles.cardContainer,
+                    width: windowWidth * 0.4,
+                    backgroundColor: bgColor
+                }}>
+                    <View>
+                    <Image
+                        style={{
+                            height: 150,
+                            width: 150
+                        }}
+                        source={{
+                        uri: urlImagen,
+                        }}
+                    />
+    
+                        <Text style={ styles.name }>
+                            { '\n#' + lesson.category.title }
+                            { '\n#' + lesson.title }
+                            { '\n#' + lesson.author }
+                        </Text>
+                    </View>
+    
                 </View>
-
-            </View>
-        </TouchableOpacity>
-    )
+            </TouchableOpacity>
+        )
 }
 
 

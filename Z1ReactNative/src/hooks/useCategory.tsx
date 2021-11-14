@@ -23,6 +23,8 @@ export const useCategoryList = () => {
         });
         
         let filteredCategory = Array.from(new Set(newCategoryTitle));
+        filteredCategory.push("All");
+        filteredCategory.sort();
 
        setCategoryList(filteredCategory);
     }

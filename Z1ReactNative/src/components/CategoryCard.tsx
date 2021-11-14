@@ -7,16 +7,20 @@ import { Lesson } from '../interfaces/LessonInterface';
 
 interface Props {
     title: string;
+    setCategoria: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const windowWidth = Dimensions.get('window').width
 
-export const CategoryCard = ({title} : Props ) => {
+
+
+export const CategoryCard = ({title, setCategoria} : Props ) => {
 
     const [bgColor, setBgColor] = useState('grey');
     // const navigation = useNavigation();
 
     return (
+        
         <TouchableOpacity
             activeOpacity={ 0.9 } 
             // onPress={ 
@@ -25,6 +29,8 @@ export const CategoryCard = ({title} : Props ) => {
             //         color: bgColor
             //     }) 
             // } 
+
+            onPress={ () => setCategoria(title)}
         >
             <View style={{
                 ...styles.cardContainer,
