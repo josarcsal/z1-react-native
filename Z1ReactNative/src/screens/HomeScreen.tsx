@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { FlatList, Text, View, } from 'react-native'
+import { FlatList, View, StyleSheet } from 'react-native';
 
 
 import { useLesson } from '../hooks/useLesson';
@@ -7,7 +7,9 @@ import { LessonCard } from '../components/LessonCard';
 import { CategoryCard } from '../components/CategoryCard';
 import { useCategoryList } from '../hooks/useCategory';
 import { useState } from 'react';
-import { Title } from '../themes/appTheme';
+import { CategoryBar, Title } from '../themes/appTheme';
+import { ScrollView } from 'react-native-gesture-handler';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const HomeScreen = () => {
 
@@ -25,17 +27,18 @@ export const HomeScreen = () => {
 
 
      return (
-            <View
+
+            <SafeAreaView
                 style={{ alignItems: 'center' }}
             >
                 <Title>Learn</Title>
-                <FlatList 
+                <CategoryBar 
                     data={categoryList}
                     renderItem={ ({ item }) => ( <CategoryCard title={ item }  setCategoria={setCategoria}/> )}
                     horizontal= {true}
 
                 />
-
+                
                 <FlatList 
                     data={ filteredList }
                     showsVerticalScrollIndicator={ false }
@@ -44,6 +47,6 @@ export const HomeScreen = () => {
                     renderItem={ ({ item }) => ( <LessonCard lesson={ item }/> )}
 
                 />
-            </View>
+            </SafeAreaView>
     )
 }

@@ -3,75 +3,31 @@ import { Text, View, StyleSheet, TouchableOpacity, Image, ActivityIndicator } fr
 
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParams } from '../navigator/Navigator';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { LessonScreenContainer, LessonScreenTitle, LessonScreenArticle, LessonScreenImage, LessonScreenText } from '../themes/appTheme';
+import { ScrollView } from 'react-native-gesture-handler';
 
 interface Props extends StackScreenProps<RootStackParams, 'LessonScreen'> {};
 
 export const LessonScreen = ({navigation, route}: Props) => {
 
-    const { top } = useSafeAreaInsets();
     const { lesson } = route.params;
 
     return (
-        <View style={{ flex: 1 }}>
-        {/* Heade Container */}
-        <View style={{
-            ...styles.headerContainer,
-            backgroundColor: 'grey',
-        }}>
-            {/* Backbutton */}
-            <TouchableOpacity
-                onPress={ () => navigation.pop() }
-                activeOpacity={0.8}
+        <ScrollView
+                showsVerticalScrollIndicator={ false }
                 style={{
-                    ...styles.backButton,
-                    top: top + 5
+                    ...StyleSheet.absoluteFillObject,
                 }}
-            >
-                
-            </TouchableOpacity>
+        >
+            <LessonScreenContainer>
 
-            <Text
-                    style={{
-                        ...styles.name,
-                        top: top + 40
-                    }}
-                >
-                    { lesson.title + '\n' }
-            </Text>
-
-
-            <Text
-                    style={{
-                        ...styles.name,
-                        top: top + 120
-                    }}
-                >
-                    { lesson.content + '\n' }
-            </Text>
+                <LessonScreenArticle>Article </LessonScreenArticle>
+                <LessonScreenTitle>{lesson.title }</LessonScreenTitle>
+                <LessonScreenText>{lesson.author }</LessonScreenText>
+                <LessonScreenImage source={{ uri: lesson.image}}/>
+                <LessonScreenText>{ lesson.content }</LessonScreenText>
             
-        </View>
-
-    </View>
+        </LessonScreenContainer>   
+    </ScrollView> 
     )
 }
-
-const styles = StyleSheet.create({
-    headerContainer: {
-        height: 370,
-        zIndex: 999,
-        alignItems: 'center',
-        borderBottomRightRadius: 1000,
-        borderBottomLeftRadius: 1000,
-    },
-    backButton: {
-        position: 'absolute',
-        left: 20
-    },
-    name: {
-        color: 'white',
-        fontSize: 40,
-        alignSelf: 'flex-start',
-        left: 20
-    }
-});

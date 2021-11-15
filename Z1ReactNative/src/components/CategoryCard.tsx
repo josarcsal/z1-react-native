@@ -3,6 +3,7 @@ import React, {useState } from 'react'
 import { Text, View, TouchableOpacity, StyleSheet, Dimensions, Image } from 'react-native';
 
 import { Lesson } from '../interfaces/LessonInterface';
+import { CategoryCardContainer, CategoryCardName } from '../themes/appTheme';
 
 
 interface Props {
@@ -11,6 +12,8 @@ interface Props {
 }
 
 const windowWidth = Dimensions.get('window').width
+const windowHeight = Dimensions.get('window').height
+
 
 
 
@@ -23,55 +26,14 @@ export const CategoryCard = ({title, setCategoria} : Props ) => {
         
         <TouchableOpacity
             activeOpacity={ 0.9 } 
-            // onPress={ 
-            //     () => navigation.navigate('LessonScreen', { 
-            //         simpleLesson: lesson,
-            //         color: bgColor
-            //     }) 
-            // } 
-
             onPress={ () => setCategoria(title)}
         >
-            <View style={{
-                ...styles.cardContainer,
-                width: windowWidth * 0.1,
-                backgroundColor: bgColor
-            }}>
-                <View>
-
-                    <Text style={ styles.name }>
+            <CategoryCardContainer>
+                    <CategoryCardName>
                         { title }
-                    </Text>
-                </View>
-
-            </View>
+                    </CategoryCardName>
+            </CategoryCardContainer>
+            
         </TouchableOpacity>
     )
 }
-
-
-const styles = StyleSheet.create({
-    cardContainer: {
-        marginHorizontal: 10,
-        // backgroundColor: 'grey',
-        marginBottom: 25,
-        borderRadius: 10,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-
-        elevation: 5,
-
-    },
-    name: {
-        color: 'white',
-        fontSize: 20,
-        fontWeight: 'bold',
-        top: 20,
-        left: 10
-    },
-});
