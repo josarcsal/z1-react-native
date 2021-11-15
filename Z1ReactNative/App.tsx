@@ -7,7 +7,7 @@ import { HomeScreen } from './src/screens/HomeScreen';
 const App = () => {
   return (
     <NavigationContainer>
-      <HomeScreen />
+      <Navigator />
     </NavigationContainer>
   )
 }

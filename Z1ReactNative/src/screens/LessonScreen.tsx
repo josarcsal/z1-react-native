@@ -10,10 +10,11 @@ interface Props extends StackScreenProps<RootStackParams, 'LessonScreen'> {};
 export const LessonScreen = ({navigation, route}: Props) => {
 
     const { top } = useSafeAreaInsets();
+    const { lesson } = route.params;
 
     return (
         <View style={{ flex: 1 }}>
-        {/* Heade Containerr */}
+        {/* Heade Container */}
         <View style={{
             ...styles.headerContainer,
             backgroundColor: 'grey',
@@ -31,13 +32,24 @@ export const LessonScreen = ({navigation, route}: Props) => {
             </TouchableOpacity>
 
             <Text
-                style={{
-                    ...styles.name,
-                    top: top + 40
-                }}
-            >
-                Paagina2
-            </Text>            
+                    style={{
+                        ...styles.name,
+                        top: top + 40
+                    }}
+                >
+                    { lesson.title + '\n' }
+            </Text>
+
+
+            <Text
+                    style={{
+                        ...styles.name,
+                        top: top + 120
+                    }}
+                >
+                    { lesson.content + '\n' }
+            </Text>
+            
         </View>
 
     </View>

@@ -8,7 +8,7 @@ import { LessonScreen } from '../screens/LessonScreen';
 
 export type RootStackParams = {
   HomeScreen: undefined,
-  LessonScreen: { lesson: Lesson, color: string }
+  LessonScreen: { lesson: Lesson }
 }
 
 
@@ -20,7 +20,7 @@ export const Navigator = () => {
       screenOptions={{
         headerShown: false,
         cardStyle: {
-          backgroundColor: 'white'
+          backgroundColor: '#320e50'
         }
       }}
     >

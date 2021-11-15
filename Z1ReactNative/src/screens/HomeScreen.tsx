@@ -7,6 +7,7 @@ import { LessonCard } from '../components/LessonCard';
 import { CategoryCard } from '../components/CategoryCard';
 import { useCategoryList } from '../hooks/useCategory';
 import { useState } from 'react';
+import { Title } from '../themes/appTheme';
 
 export const HomeScreen = () => {
 
@@ -27,7 +28,7 @@ export const HomeScreen = () => {
             <View
                 style={{ alignItems: 'center' }}
             >
-                <Text>Trip</Text>
+                <Title>Learn</Title>
                 <FlatList 
                     data={categoryList}
                     renderItem={ ({ item }) => ( <CategoryCard title={ item }  setCategoria={setCategoria}/> )}
