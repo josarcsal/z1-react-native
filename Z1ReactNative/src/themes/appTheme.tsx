@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
 
 export const Title = styled.Text`
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     text-align: center;
     font-size: 28px;
     font-weight: 700;
@@ -25,7 +25,7 @@ export const Title = styled.Text`
 
 export const CategoryBar = styled.FlatList`
     margin-top: 12px;
-    margin-bottom: 32px;
+    margin-bottom: 12px;
     margin-left: 10px;
     haight: 50px;
 `;
@@ -74,18 +74,69 @@ export const LessonCardAuthor = styled.Text`
     font-size: 13px;
 `;
 
+//HORIZONTAL LESSON CARD
+export const HorizontalLessonCardContainer = styled.View`
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #60306f;
+    shadow-color: #000;
+    height:125px;
+    align-content: center;
+`;
+
+export const HorizontalLessonCardImage = styled.Image`
+    width: 30%;
+    height: 107px;
+    margin-vertical: 8px;
+    margin-horizontal: 8px;
+    border-radius: 10px;
+`;
+
+export const HorizontalLessonCardCategory = styled.Text` 
+    position: absolute;
+    left: 115px;
+    margin-horizontal: 15px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #fddb6f;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+`;
+
+export const HorizontalLessonCardTitle = styled.Text` 
+    position: absolute;
+    top: 35px;
+    left: 115px;
+    width: 220px;
+    margin-horizontal: 15px;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+`;
+
+export const HorizontalLessonCardAuthor = styled.Text` 
+    position: absolute;
+    bottom: 5px;
+    left: 115px;
+    margin-horizontal: 15px;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    font-size: 13px;
+`;
+
 //CATEGORIES
 
 export const CategoryCardContainer = styled.View`
     margin-horizontal: 7px;
     margin-bottom: 7px;
     border-radius: 10px;
-    background-color: #593c71;
     shadow-color: #000;
     elevation: 5;
     height: 37px;
 `;
-
+//    background-color: #593c71;
 export const CategoryCardName = styled.Text`
     font-size: 18px;
     font-weight: bold;

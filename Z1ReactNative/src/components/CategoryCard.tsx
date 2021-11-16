@@ -1,26 +1,17 @@
-import { useNavigation } from '@react-navigation/core';
-import React, {useState } from 'react'
-import { Text, View, TouchableOpacity, StyleSheet, Dimensions, Image } from 'react-native';
+import React, { useState } from 'react'
+import { TouchableOpacity, Dimensions } from 'react-native';
 
-import { Lesson } from '../interfaces/LessonInterface';
 import { CategoryCardContainer, CategoryCardName } from '../themes/appTheme';
 
 
 interface Props {
     title: string;
+    categoriaActual: string;
     setCategoria: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const windowWidth = Dimensions.get('window').width
-const windowHeight = Dimensions.get('window').height
 
-
-
-
-export const CategoryCard = ({title, setCategoria} : Props ) => {
-
-    const [bgColor, setBgColor] = useState('grey');
-    // const navigation = useNavigation();
+export const CategoryCard = ({title, categoriaActual, setCategoria} : Props ) => {
 
     return (
         
@@ -28,7 +19,10 @@ export const CategoryCard = ({title, setCategoria} : Props ) => {
             activeOpacity={ 0.9 } 
             onPress={ () => setCategoria(title)}
         >
-            <CategoryCardContainer>
+            <CategoryCardContainer style={ title === categoriaActual ?
+             { backgroundColor: '#b77ac4'} :
+             { backgroundColor: '#593c71'}
+             }>
                     <CategoryCardName>
                         { title }
                     </CategoryCardName>

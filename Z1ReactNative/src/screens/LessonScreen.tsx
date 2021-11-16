@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, StyleSheet, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParams } from '../navigator/Navigator';
