@@ -1,21 +1,36 @@
-import React, { FC, useCallback } from 'react';
-import { Button } from 'react-native';
-import { useTranslation } from 'react-i18next';
-import { Container, Text } from './styles';
+import React, { FC } from 'react';
+import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
+import { CategoryCard } from 'components/CategoryCard';
+//import { HorizontalLessonCard } from 'components/Lesson/HorizontalLessonCard';
+import { VerticalLessonCard } from 'components/Lesson/VerticalLessonCard';
+import useConnect from './connect';
+import { CategoryBar, Container, Title } from './styles';
 import { Props } from './types';
 
 const Home: FC<Props> = () => {
-  const { t, i18n } = useTranslation();
-
-  const onPress = useCallback(() => {
-    const language = i18n.language === 'en_US' ? 'es_ES' : 'en_US';
-    i18n.changeLanguage(language);
-  }, [i18n]);
+  const { handleNavigateToDetail } = useConnect();
 
   return (
     <Container>
-      <Text>{t('home')}</Text>
-      <Button title={t('changeLanguage')} onPress={onPress} />
+      <Title>Learn</Title>
+      <CategoryBar
+        data={['cat1', 'cat2']}
+        showsHorizontalScrollIndicator={false}
+        renderItem={() => <CategoryCard />}
+        horizontal={true}
+      />
+      <FlatList
+        data={['lesson1', 'lesso2', 'lesson3', '4', '5', '6']}
+        showsVerticalScrollIndicator={false}
+        numColumns={2}
+        renderItem={() => (
+          <TouchableOpacity onPress={handleNavigateToDetail}>
+            <VerticalLessonCard />
+          </TouchableOpacity>
+
+          //<Button title="lesson" onPress={handleNavigateToDetail} />
+        )}
+      />
     </Container>
   );
 };
