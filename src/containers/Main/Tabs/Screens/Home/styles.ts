@@ -4,8 +4,16 @@ import { Text as TextBase } from 'components';
 export const Container = styled.View`
   flex: 1;
   align-items: center;
-  margin-bottom: ${({ theme }) => theme.device.height * 0.1}px;
+  margin-bottom: 65px;
   background-color: ${({ theme }) => theme.colors.grape};
+`;
+
+export const HeaderContainer = styled.View`
+  height: 105px;
+`;
+
+export const SubContainer = styled.View`
+  align-items: center;
 `;
 
 export const Text = styled(TextBase)`
@@ -15,7 +23,6 @@ export const Text = styled(TextBase)`
 `;
 
 export const Title = styled.Text`
-  margin-top: 15px;
   margin-bottom: 5px;
   text-align: center;
   font-size: 28px;
@@ -26,7 +33,7 @@ export const Title = styled.Text`
 
 export const CategoryBar = styled.FlatList`
   margin-top: 12px;
+  margin-left: 20px;
   margin-bottom: 12px;
-  margin-left: 10px;
   height: 50px;
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const CategoryCardContainer = styled.View`
-  margin-horizontal: 7px;
+  margin-right: 7px;
   background-color: #593c71;
   margin-bottom: 7px;
   border-radius: 10px;
@@ -17,4 +17,5 @@ export const CategoryCardName = styled.Text`
   margin-vertical: 6px;
   elevation: 5;
   align-self: center;
+  color: ${({ theme }) => theme.colors.white};
 `;
