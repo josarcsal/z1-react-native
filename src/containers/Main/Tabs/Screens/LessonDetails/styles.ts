@@ -24,14 +24,14 @@ export const LessonScreenArticle = styled.Text`
 export const LessonScreenTitle = styled.Text`
   font-size: 30px;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
   margin-horizontal: 10px;
   margin-vertical: 7px;
 `;
 
 export const LessonScreenText = styled.Text`
   font-size: 13px;
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
   margin-horizontal: 10px;
   margin-vertical: 7px;
 `;
