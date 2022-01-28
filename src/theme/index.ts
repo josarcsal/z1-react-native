@@ -64,6 +64,11 @@ export const colors = {
   white70: '#ffffff70',
   white80: '#ffffffcc',
   white90: '#ffffff90',
+  purpleDark: '#593c71',
+  purpleLight: '#b77ac4',
+  purpleCard: '#60306f',
+  purple4E: '#4E4D93',
+  yellowArticle: '#fddb6f',
 };
 
 const { width, height } = Dimensions.get('window');

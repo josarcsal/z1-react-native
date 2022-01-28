@@ -28,7 +28,7 @@ export const Title = styled.Text`
   font-size: 28px;
   font-weight: 700;
   letter-spacing: 0.25px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 export const CategoryBar = styled.FlatList`

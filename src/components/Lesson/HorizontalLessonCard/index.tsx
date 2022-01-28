@@ -6,7 +6,6 @@ import {
   HorizontalLessonCardImage,
   HorizontalLessonCardTitle,
 } from './styles';
-import {} from './styles';
 
 export const HorizontalLessonCard = () => {
   return (
