@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const VerticalLessonCardContainer = styled.View`
   margin-horizontal: 5px;
-  width: ${({ theme }) => theme.device.width * 0.435}px;
+  width: ${({ theme }) => theme.device.width * 0.45}px;
   margin-bottom: 10px;
   border-radius: 10px;
   background-color: ${({ theme }) => theme.colors.purpleCard};

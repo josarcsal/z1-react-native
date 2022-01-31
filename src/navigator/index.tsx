@@ -5,7 +5,6 @@ import { LessonDetails } from 'containers/Main/Tabs/Screens/LessonDetails';
 import {
   // modalStackScreenOptions,
   generalStackScreenOptions,
-  modalStackScreenOptions,
 } from './constants';
 import { Props } from './types';
 
@@ -18,9 +17,7 @@ const AppNavigator: FC<Props> = () => {
       {ready ? (
         <Group screenOptions={generalStackScreenOptions}>
           <Screen name="Tabs" component={Tabs} />
-          <Group screenOptions={modalStackScreenOptions}>
-            <Screen name="LessonDetails" component={LessonDetails} />
-          </Group>
+          <Screen name="LessonDetails" component={LessonDetails} />
         </Group>
       ) : (
         <Group screenOptions={generalStackScreenOptions}>

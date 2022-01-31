@@ -7,8 +7,8 @@ export const LessonDetailScrollView = styled.ScrollView`
 export const LessonScreenContainer = styled.View`
   flex: 1;
   align-content: center;
-  margin-top: 10px;
   margin-horizontal: 20px;
+  margin-top: 25px;
   background-color: ${({ theme }) => theme.colors.grape};
 `;
 

@@ -17,5 +17,4 @@ export const CategoryCardName = styled.Text`
   margin-vertical: 6px;
   elevation: 5;
   align-self: center;
-  color: ${({ theme }) => theme.colors.white};
 `;
