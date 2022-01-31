@@ -5,8 +5,8 @@ export const VerticalLessonCardContainer = styled.View`
   width: ${({ theme }) => theme.device.width * 0.435}px;
   margin-bottom: 10px;
   border-radius: 10px;
-  background-color: #60306f;
-  shadow-color: #000;
+  background-color: ${({ theme }) => theme.colors.lessonPurple};
+  shadow-color: ${({ theme }) => theme.colors.white};
   elevation: 5;
   height: 300px;
 `;
@@ -22,7 +22,7 @@ export const VerticalLessonCardCategory = styled.Text`
   margin-horizontal: 10px;
   margin-top: 10px;
   margin-bottom: 5px;
-  color: #fddb6f;
+  color: ${({ theme }) => theme.colors.lessonYellow};
   font-size: 15px;
   text-transform: uppercase;
   font-weight: bold;
@@ -31,7 +31,7 @@ export const VerticalLessonCardCategory = styled.Text`
 export const VerticalLessonCardTitle = styled.Text`
   margin-horizontal: 10px;
   margin-bottom: 5px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
   font-size: 18px;
   font-weight: bold;
 `;
@@ -39,6 +39,6 @@ export const VerticalLessonCardTitle = styled.Text`
 export const VerticalLessonCardAuthor = styled.Text`
   margin-horizontal: 10px;
   margin-bottom: 5px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
   font-size: 13px;
 `;

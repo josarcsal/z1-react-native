@@ -16,7 +16,7 @@ export const Content = styled(BorderlessButton).attrs(() => ({
 `;
 
 const focusedLabelStyles = css`
-  color: #fddb6f;
+  color: ${({ theme }) => theme.colors.lessonYellow};
 `;
 
 export const Label = styled(Text).attrs(() => ({

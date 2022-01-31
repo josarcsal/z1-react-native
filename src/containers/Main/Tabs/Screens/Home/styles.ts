@@ -18,7 +18,7 @@ export const SubContainer = styled.View`
 
 export const Text = styled(TextBase)`
   font-size: 20px;
-  color: #000;
+  color: ${({ theme }) => theme.colors.black};
   margin: 5px 0;
 `;
 
@@ -28,7 +28,7 @@ export const Title = styled.Text`
   font-size: 28px;
   font-weight: 700;
   letter-spacing: 0.25px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 export const CategoryBar = styled.FlatList`

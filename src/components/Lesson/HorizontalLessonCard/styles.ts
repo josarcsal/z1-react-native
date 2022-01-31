@@ -4,8 +4,8 @@ export const HorizontalLessonCardContainer = styled.View`
   width: ${({ theme }) => theme.device.width * 0.9}px;
   margin-bottom: 10px;
   border-radius: 10px;
-  background-color: #60306f;
-  shadow-color: #000;
+  background-color: ${({ theme }) => theme.colors.lessonPurple};
+  shadow-color: ${({ theme }) => theme.colors.black};
   height: 125px;
   align-content: center;
 `;
@@ -24,7 +24,7 @@ export const HorizontalLessonCardCategory = styled.Text`
   margin-horizontal: 12px;
   margin-top: 10px;
   margin-bottom: 5px;
-  color: #fddb6f;
+  color: ${({ theme }) => theme.colors.lessonYellow};
   font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
@@ -38,7 +38,7 @@ export const HorizontalLessonCardTitle = styled.Text`
   margin-horizontal: 12px;
   margin-bottom: 5px;
   margin-top: 5px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
   font-size: 18px;
   font-weight: bold;
 `;
@@ -49,6 +49,6 @@ export const HorizontalLessonCardAuthor = styled.Text`
   left: 115px;
   margin-horizontal: 12px;
   margin-bottom: 5px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
   font-size: 13px;
 `;

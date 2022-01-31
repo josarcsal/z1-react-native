@@ -15,7 +15,7 @@ export const LessonScreenContainer = styled.View`
 export const LessonScreenArticle = styled.Text`
   font-size: 13px;
   text-transform: uppercase;
-  color: #fddb6f;
+  color: ${({ theme }) => theme.colors.lessonYellow};
   margin-horizontal: 10px;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -24,14 +24,14 @@ export const LessonScreenArticle = styled.Text`
 export const LessonScreenTitle = styled.Text`
   font-size: 30px;
   font-weight: bold;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
   margin-horizontal: 10px;
   margin-vertical: 7px;
 `;
 
 export const LessonScreenText = styled.Text`
   font-size: 13px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
   margin-horizontal: 10px;
   margin-vertical: 7px;
 `;

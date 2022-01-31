@@ -64,6 +64,11 @@ export const colors = {
   white70: '#ffffff70',
   white80: '#ffffffcc',
   white90: '#ffffff90',
+  lessonPurple: '#60306f',
+  lessonYellow: '#fddb6f',
+  purpleCat: '#593c71',
+  purpleIcon: '#4E4D93',
+  lightPurpleCat: '#b77ac4',
 };
 
 const { width, height } = Dimensions.get('window');
