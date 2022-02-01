@@ -1,8 +1,31 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { useNavigation } from '@react-navigation/core';
+import { useLessonsQuery } from 'apollo/generated/lessons';
+import { normalizeLessons } from 'models/Lesson';
 
 const useConnect = () => {
-  const { navigate, goBack, canGoBack } = useNavigation();
+  const { goBack, canGoBack } = useNavigation();
+
+  const { data } = useLessonsQuery();
+
+  const { lessons } = normalizeLessons(data);
+
+  const categories = lessons?.map((lesson) => {
+    return lesson?.category.title;
+  });
+
+  const allCategoryList = Array.from(new Set(categories));
+  allCategoryList.push('All');
+  allCategoryList.sort();
+
+  const [filter, setFilter] = useState<string>('All');
+
+  const selector = filter === 'All';
+
+  var filteredList = useMemo(() => {
+    if (selector) return lessons;
+    return lessons?.filter((lesson) => filter === lesson?.category.title);
+  }, [filter, lessons, selector]);
 
   const handleBack = useCallback(() => {
     if (canGoBack()) {
@@ -10,10 +33,13 @@ const useConnect = () => {
     }
   }, [canGoBack, goBack]);
 
-  const handleNavigateToDetail = useCallback(() => {
-    navigate('LessonDetails');
-  }, [navigate]);
-  return { handleNavigateToDetail, handleBack };
+  return {
+    handleBack,
+    setFilter,
+    filter,
+    filteredList,
+    allCategoryList,
+  };
 };
 
 export default useConnect;

@@ -29,9 +29,6 @@ const AppNavigator: FC<Props> = () => {
           <Screen name="Login" component={Login} />
         </Group>
       )}
-      {/* <Group screenOptions={modalStackScreenOptions}>
-        <Screen name="Modal" component={Modal} />
-      </Group> */}
     </Navigator>
   );
 };

@@ -1,3 +1,6 @@
+import { LessonNormalized } from 'models/Lesson';
+
 export type Props = {
-  categoryFlag: number;
+  isFiltered: string;
+  lessons: LessonNormalized[];
 };

@@ -10,13 +10,14 @@ export const CategoryCardContainer = styled.View`
   height: 37px;
 `;
 
-export const Selected = styled.View`
-  margin-right: 10px;
-  border-radius: 10px;
-  background-color: #b77ac4;
+export const SelectedCategoryCardContainer = styled.View`
+  margin-right: 7px;
   background-color: ${({ theme }) => theme.colors.lightPurpleCat};
-  height: 30px;
-  justify-content: center;
+  margin-bottom: 7px;
+  border-radius: 10px;
+  shadow-color: ${({ theme }) => theme.colors.black};
+  elevation: 5;
+  height: 37px;
 `;
 
 export const CategoryCardName = styled.Text`
