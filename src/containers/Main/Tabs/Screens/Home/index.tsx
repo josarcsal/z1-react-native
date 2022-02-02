@@ -34,7 +34,7 @@ const Home: FC<Props> = () => {
               horizontal={true}
             />
           </HeaderContainer>
-          <LessonList isFiltered={filter} lessons={filteredList} />
+          <LessonList filter={filter} lessons={filteredList} />
         </SubContainer>
       </SafeAreaView>
     </Container>

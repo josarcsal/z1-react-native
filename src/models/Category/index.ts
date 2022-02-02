@@ -1,8 +1,8 @@
-import { Category } from 'apollo/generated/globalTypes';
+import { Category as CategoryType } from 'apollo/generated/globalTypes';
 
-export const normalizeCategory = (category: Category) => ({
+export const normalizeCategory = (category: CategoryType) => ({
   id: category.id,
   title: category.title,
 });
 
-export type CategoryNormalized = ReturnType<typeof normalizeCategory>;
+export type Category = ReturnType<typeof normalizeCategory>;

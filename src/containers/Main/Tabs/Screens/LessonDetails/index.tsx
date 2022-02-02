@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Close from 'components/Icons/Close';
-import useConnect from '../Home/connect';
+import useConnect from './connect';
 import {
   LessonDetailScrollView,
   LessonScreenArticle,
@@ -11,11 +11,10 @@ import {
   LessonScreenText,
   LessonScreenTitle,
 } from './styles';
-import { Props } from './types';
 
-export const LessonDetails: FC<Props> = ({ route }) => {
-  const { handleBack } = useConnect();
-  const { lesson } = route.params;
+export const LessonDetails: FC = () => {
+  const { handleBack, title, author, categoryTitle, image, content } =
+    useConnect();
 
   return (
     <LessonDetailScrollView showsVerticalScrollIndicator={false}>
@@ -24,15 +23,15 @@ export const LessonDetails: FC<Props> = ({ route }) => {
           <BorderlessButton onPress={handleBack}>
             <Close />
           </BorderlessButton>
-          <LessonScreenArticle>{lesson?.category.title}</LessonScreenArticle>
-          <LessonScreenTitle>{lesson?.title}</LessonScreenTitle>
-          <LessonScreenText>{lesson?.author}</LessonScreenText>
+          <LessonScreenArticle>{categoryTitle}</LessonScreenArticle>
+          <LessonScreenTitle>{title}</LessonScreenTitle>
+          <LessonScreenText>{author}</LessonScreenText>
           <LessonScreenImage
             source={{
-              uri: lesson?.image,
+              uri: image,
             }}
           />
-          <LessonScreenText>{lesson?.content}</LessonScreenText>
+          <LessonScreenText>{content}</LessonScreenText>
         </LessonScreenContainer>
       </SafeAreaView>
     </LessonDetailScrollView>
