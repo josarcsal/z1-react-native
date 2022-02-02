@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 
 export const CategoryCardContainer = styled.View`
   margin-right: 7px;
@@ -21,10 +21,15 @@ export const SelectedCategoryCardContainer = styled.View`
 `;
 
 export const CategoryCardName = styled.Text`
+  font-family: 'SofiaProSemiBold';
   font-size: 18px;
-  font-weight: bold;
   margin-horizontal: 10px;
-  margin-vertical: 6px;
+  margin-vertical: 10px;
+  ${({ theme }) =>
+    theme.device.isAndroid &&
+    css`
+      margin-vertical: 5px;
+    `};
   elevation: 5;
   align-self: center;
   color: ${({ theme }) => theme.colors.white};

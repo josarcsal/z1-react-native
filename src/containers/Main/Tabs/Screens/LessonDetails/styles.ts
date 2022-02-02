@@ -13,6 +13,7 @@ export const LessonScreenContainer = styled.View`
 `;
 
 export const LessonScreenArticle = styled.Text`
+  font-family: 'SofiaProMedium';
   font-size: 13px;
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.lessonYellow};
@@ -22,14 +23,15 @@ export const LessonScreenArticle = styled.Text`
 `;
 
 export const LessonScreenTitle = styled.Text`
+  font-family: 'SofiaProSemiBold';
   font-size: 30px;
-  font-weight: bold;
   color: ${({ theme }) => theme.colors.white};
   margin-horizontal: 10px;
   margin-vertical: 7px;
 `;
 
 export const LessonScreenText = styled.Text`
+  font-family: 'SofiaProRegular';
   font-size: 13px;
   color: ${({ theme }) => theme.colors.white};
   margin-horizontal: 10px;

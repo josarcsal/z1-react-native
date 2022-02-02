@@ -19,6 +19,7 @@ export const HorizontalLessonCardImage = styled.Image`
 `;
 
 export const HorizontalLessonCardCategory = styled.Text`
+  font-family: 'SofiaProMedium';
   position: absolute;
   left: 115px;
   margin-horizontal: 12px;
@@ -26,11 +27,11 @@ export const HorizontalLessonCardCategory = styled.Text`
   margin-bottom: 5px;
   color: ${({ theme }) => theme.colors.lessonYellow};
   font-size: 15px;
-  font-weight: bold;
   text-transform: uppercase;
 `;
 
 export const HorizontalLessonCardTitle = styled.Text`
+  font-family: 'SofiaProSemiBold';
   position: absolute;
   top: 35px;
   left: 115px;
@@ -40,10 +41,10 @@ export const HorizontalLessonCardTitle = styled.Text`
   margin-top: 5px;
   color: ${({ theme }) => theme.colors.white};
   font-size: 18px;
-  font-weight: bold;
 `;
 
 export const HorizontalLessonCardAuthor = styled.Text`
+  font-family: 'SofiaProLight';
   position: absolute;
   bottom: 5px;
   left: 115px;

@@ -25,7 +25,7 @@ export const VerticalLessonCard: FC<Props> = ({ lesson, onPress }) => {
         <VerticalLessonCardCategory>
           {lesson?.category.title}
         </VerticalLessonCardCategory>
-        <VerticalLessonCardTitle> {lesson?.title}</VerticalLessonCardTitle>
+        <VerticalLessonCardTitle>{lesson?.title}</VerticalLessonCardTitle>
         <VerticalLessonCardAuthor>{lesson?.author}</VerticalLessonCardAuthor>
       </VerticalLessonCardContainer>
     </TouchableOpacity>
