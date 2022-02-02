@@ -13,7 +13,7 @@ export const CategoryCard: FC<Props> = ({ category, filter, setFilter }) => {
     [category, setFilter],
   );
 
-  const isFiltered = category.localeCompare(filter) === 0;
+  const isFiltered = category === filter;
 
   return (
     <TouchableOpacity activeOpacity={0.9} onPress={handleFilter}>

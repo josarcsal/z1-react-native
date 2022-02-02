@@ -1,6 +1,6 @@
-import { LessonNormalized } from 'models/Lesson';
+import { Lesson } from 'models/Lesson';
 
 export type Props = {
-  onPress: (item: LessonNormalized) => void;
-  lesson: LessonNormalized;
+  onPress: (item: Lesson) => void;
+  lesson: Lesson;
 };

@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useNavigation } from '@react-navigation/core';
-import { LessonNormalized } from 'models/Lesson';
+import { Lesson } from 'models/Lesson';
 
 const useConnect = () => {
   const { navigate, goBack, canGoBack } = useNavigation();
@@ -12,7 +12,7 @@ const useConnect = () => {
   }, [canGoBack, goBack]);
 
   const handleNavigateToDetail = useCallback(
-    (item: LessonNormalized) => {
+    (item: Lesson) => {
       navigate('LessonDetails', { lesson: item });
     },
     [navigate],

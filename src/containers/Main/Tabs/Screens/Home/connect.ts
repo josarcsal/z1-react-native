@@ -1,14 +1,11 @@
 import { useCallback, useMemo, useState } from 'react';
 import { useNavigation } from '@react-navigation/core';
-import { useLessonsQuery } from 'apollo/generated/lessons';
-import { normalizeLessons } from 'models/Lesson';
+import useLessons from 'apollo/hooks/useLessons';
 
 const useConnect = () => {
   const { goBack, canGoBack } = useNavigation();
 
-  const { data } = useLessonsQuery();
-
-  const { lessons } = normalizeLessons(data);
+  const { lessons } = useLessons();
 
   const categories = lessons?.map((lesson) => {
     return lesson?.category.title;
