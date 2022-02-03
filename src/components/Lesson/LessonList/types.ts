@@ -1,3 +1,6 @@
+import { Lesson } from 'models/Lesson';
+
 export type Props = {
-  categoryFlag: number;
+  filter: string;
+  lessons: Lesson[];
 };

@@ -1,43 +1,51 @@
-import React, { FC } from 'react';
-import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
+import React, { FC, memo } from 'react';
+import { FlatList } from 'react-native-gesture-handler';
+import { Lesson } from 'models/Lesson';
 import { HorizontalLessonCard } from '../HorizontalLessonCard';
 import { VerticalLessonCard } from '../VerticalLessonCard';
 import useConnect from './connect';
 import { HorizontalView, VerticalView } from './styles';
 import { Props } from './types';
 
-export const LessonList: FC<Props> = ({ categoryFlag }) => {
+const handleKeyExtractor = (item: Lesson) => item.id;
+
+export const LessonList: FC<Props> = ({ filter, lessons }) => {
   const { handleNavigateToDetail } = useConnect();
+  const categoryFlag = filter === 'All';
   return (
     <>
       {categoryFlag ? (
-        <HorizontalView>
-          <FlatList
-            key={'1colum'}
-            data={['lesson1', 'lesso2', 'lesson3', '4', '5', '6']}
-            showsVerticalScrollIndicator={false}
-            renderItem={() => (
-              <TouchableOpacity onPress={handleNavigateToDetail}>
-                <HorizontalLessonCard />
-              </TouchableOpacity>
-            )}
-          />
-        </HorizontalView>
-      ) : (
         <VerticalView>
           <FlatList
-            key={'2colums'}
-            data={['lesson1', 'lesso2', 'lesson3', '4', '5', '6']}
+            keyExtractor={handleKeyExtractor}
+            data={lessons}
             numColumns={2}
             showsVerticalScrollIndicator={false}
-            renderItem={() => (
-              <TouchableOpacity onPress={handleNavigateToDetail}>
-                <VerticalLessonCard />
-              </TouchableOpacity>
+            renderItem={(lesson) => (
+              <VerticalLessonCard
+                lesson={lesson.item}
+                onPress={handleNavigateToDetail}
+              />
             )}
           />
         </VerticalView>
+      ) : (
+        <HorizontalView>
+          <FlatList
+            keyExtractor={handleKeyExtractor}
+            data={lessons}
+            showsVerticalScrollIndicator={false}
+            renderItem={(lesson) => (
+              <HorizontalLessonCard
+                lesson={lesson.item}
+                onPress={handleNavigateToDetail}
+              />
+            )}
+          />
+        </HorizontalView>
       )}
     </>
   );
 };
+
+export default memo(LessonList);

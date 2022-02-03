@@ -18,15 +18,15 @@ export const SubContainer = styled.View`
 
 export const Text = styled(TextBase)`
   font-size: 20px;
-  color: #000;
+  color: ${({ theme }) => theme.colors.black};
   margin: 5px 0;
 `;
 
 export const Title = styled.Text`
+  font-family: 'CooperBT-Medium';
   margin-bottom: 5px;
   text-align: center;
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 30px;
   letter-spacing: 0.25px;
   color: ${({ theme }) => theme.colors.white};
 `;

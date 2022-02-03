@@ -1,4 +1,5 @@
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { Lesson } from 'models/Lesson';
 
 declare global {
   namespace ReactNavigation {
@@ -6,13 +7,17 @@ declare global {
   }
 }
 
+type DetailsParams = {
+  lesson: Lesson;
+};
+
 export type ScreensParams = {
   Login: undefined;
   Home: undefined;
   Alerts: undefined;
   Discover: undefined;
   Feed: undefined;
-  LessonDetails: undefined;
+  LessonDetails: DetailsParams;
 };
 
 export type MainStackScreenProps<ScreenName extends keyof ScreensParams> =

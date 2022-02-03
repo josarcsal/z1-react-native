@@ -45,4 +45,5 @@ extensions:
           - add: *notModify
           - add: *eslint
           - typescript-operations
-          - typescript-react-apollo
+          - typescript-react-apollo 
+

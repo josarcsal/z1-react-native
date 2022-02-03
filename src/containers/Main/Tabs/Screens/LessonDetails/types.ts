@@ -1,3 +1,4 @@
 import { MainStackScreenProps } from 'navigator/types';
 
-export type Props = MainStackScreenProps<'LessonDetails'> & {};
+export type LessonDetailsRouteProps =
+  MainStackScreenProps<'LessonDetails'>['route'];

@@ -5,7 +5,7 @@ import { Props } from './types';
 
 const PlusIcon: FC<Props> = ({
   size = 20,
-  color = theme.colors.purple4E,
+  color = theme.colors.purpleIcon,
   ...props
 }) => (
   <Svg width={size} height={size} viewBox="0 0 20 20" {...props}>
